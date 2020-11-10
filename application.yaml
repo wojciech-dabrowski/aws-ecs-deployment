@@ -1,17 +1,29 @@
+AWSTemplateFormatVersion: 2010-09-09
+
+Description: |
+  CloudFormation with example of ECS Cluster with configured blue/green deployment
+
 Parameters:
+
   Vpc:
     Type: AWS::EC2::VPC::Id
+
   SubnetA:
     Type: AWS::EC2::Subnet::Id
+
   SubnetB:
     Type: AWS::EC2::Subnet::Id
+
   ImageTag:
     Type: String
     Default: latest
+
   RepositoryName:
     Type: String
     Default: ecs-blue-green-repository
+
 Transform: AWS::CodeDeployBlueGreen
+
 Hooks:
   CodeDeployBlueGreenHook:
     Properties:
@@ -36,7 +48,9 @@ Hooks:
                 - ALBTargetGroupBlue
                 - ALBTargetGroupGreen
     Type: AWS::CodeDeploy::BlueGreen
+
 Resources:
+
   ApiSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
@@ -51,6 +65,7 @@ Resources:
           FromPort: 443
           ToPort: 443
           CidrIp: 0.0.0.0/0
+
   ALBTargetGroupBlue:
     Type: AWS::ElasticLoadBalancingV2::TargetGroup
     Properties:
@@ -67,6 +82,7 @@ Resources:
       TargetType: ip
       UnhealthyThresholdCount: 4
       VpcId: !Ref Vpc
+
   ALBTargetGroupGreen:
     Type: AWS::ElasticLoadBalancingV2::TargetGroup
     Properties:
@@ -86,6 +102,7 @@ Resources:
       TargetType: ip
       UnhealthyThresholdCount: 4
       VpcId: !Ref Vpc
+
   LoadBalancer:
     Type: AWS::ElasticLoadBalancingV2::LoadBalancer
     Properties:
@@ -97,6 +114,7 @@ Resources:
         - !Ref SubnetB
       Type: application
       IpAddressType: ipv4
+
   ALBListenerProdTraffic:
     Type: AWS::ElasticLoadBalancingV2::Listener
     Properties:
@@ -109,6 +127,7 @@ Resources:
       LoadBalancerArn: !Ref LoadBalancer
       Port: 80
       Protocol: HTTP
+
   ECSTaskExecutionRole:
     Type: AWS::IAM::Role
     Properties:
@@ -122,6 +141,11 @@ Resources:
             Action: sts:AssumeRole
       ManagedPolicyArns:
         - 'arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy'
+
+  ECSCluster:
+    Type: AWS::ECS::Cluster
+    Properties: { }
+
   BlueTaskDefinition:
     Type: AWS::ECS::TaskDefinition
     Properties:
@@ -140,9 +164,7 @@ Resources:
       Cpu: 256
       Memory: 512
       Family: simple-go-api
-  ECSCluster:
-    Type: AWS::ECS::Cluster
-    Properties: { }
+
   ECSService:
     Type: AWS::ECS::Service
     Properties:
@@ -150,6 +172,7 @@ Resources:
       DesiredCount: 1
       DeploymentController:
         Type: EXTERNAL
+
   BlueTaskSet:
     Type: AWS::ECS::TaskSet
     Properties:
@@ -173,6 +196,7 @@ Resources:
         - ContainerName: SimpleGoApi
           ContainerPort: 80
           TargetGroupArn: !Ref ALBTargetGroupBlue
+
   PrimaryTaskSet:
     Type: AWS::ECS::PrimaryTaskSet
     Properties:

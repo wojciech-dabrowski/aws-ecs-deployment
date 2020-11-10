@@ -22,15 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="470cf353-5471-4110-81dc-6c73e5ea39ff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deploy-app.ps1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deploy-repo.ps1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/repository.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="470cf353-5471-4110-81dc-6c73e5ea39ff" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -113,6 +105,10 @@
       <screen x="64" y="0" width="2496" height="1440" />
     </state>
     <state x="1059" y="575" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/64.0.2496.1440/-1858.516.1858.1080@64.0.2496.1440" timestamp="1604589105371" />
+    <state x="1092" y="475" key="FileChooserDialogImpl" timestamp="1604998405740">
+      <screen x="64" y="0" width="2496" height="1440" />
+    </state>
+    <state x="1092" y="475" key="FileChooserDialogImpl/64.0.2496.1440/-1858.516.1858.1080@64.0.2496.1440" timestamp="1604998405740" />
     <state x="813" y="365" key="SettingsEditor" timestamp="1604659525918">
       <screen x="64" y="0" width="2496" height="1440" />
     </state>

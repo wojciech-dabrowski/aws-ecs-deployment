@@ -23,17 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="470cf353-5471-4110-81dc-6c73e5ea39ff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/blue-green/deploy-app.ps1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rolling/application.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rolling/deploy-app.ps1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/blue-green/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-push.ps1" beforeDir="false" afterPath="$PROJECT_DIR$/build-push.ps1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deploy-app.ps1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deploy-repo.ps1" beforeDir="false" afterPath="$PROJECT_DIR$/deploy-repo.ps1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue-green/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/blue-green/application.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repository.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/repository.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

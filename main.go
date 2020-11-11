@@ -8,7 +8,7 @@ import (
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Updated Hello %s!", r.URL.Path[1:])
+	fmt.Fprintf(w, "Hello %s!", r.URL.Path[1:])
 	fmt.Println("HTTP call, Controller:", r.URL.Path[1:])
 }
 

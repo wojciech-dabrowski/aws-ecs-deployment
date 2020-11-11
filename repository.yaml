@@ -4,4 +4,4 @@ Resources:
   ContainerRepository:
     Type: AWS::ECR::Repository
     Properties:
-      RepositoryName: ecs-blue-green-repository
+      RepositoryName: ecr-repository

@@ -8,10 +8,16 @@ Parameters:
   Vpc:
     Type: AWS::EC2::VPC::Id
 
-  SubnetA:
+  PublicSubnetA:
     Type: AWS::EC2::Subnet::Id
 
-  SubnetB:
+  PublicSubnetB:
+    Type: AWS::EC2::Subnet::Id
+
+  PrivateSubnetA:
+    Type: AWS::EC2::Subnet::Id
+
+  PrivateSubnetB:
     Type: AWS::EC2::Subnet::Id
 
   ImageTag:
@@ -20,7 +26,7 @@ Parameters:
 
   RepositoryName:
     Type: String
-    Default: ecs-blue-green-repository
+    Default: ecr-repository
 
 Transform: AWS::CodeDeployBlueGreen
 
@@ -110,8 +116,8 @@ Resources:
       SecurityGroups:
         - !Ref ApiSecurityGroup
       Subnets:
-        - !Ref SubnetA
-        - !Ref SubnetB
+        - !Ref PublicSubnetA
+        - !Ref PublicSubnetB
       Type: application
       IpAddressType: ipv4
 
@@ -165,11 +171,11 @@ Resources:
       Memory: 512
       Family: simple-go-api
 
-  ECSService:
+  Service:
     Type: AWS::ECS::Service
     Properties:
       Cluster: !Ref ECSCluster
-      DesiredCount: 1
+      DesiredCount: 2
       DeploymentController:
         Type: EXTERNAL
 
@@ -180,17 +186,17 @@ Resources:
       LaunchType: FARGATE
       NetworkConfiguration:
         AwsVpcConfiguration:
-          AssignPublicIp: ENABLED
+          AssignPublicIp: DISABLED
           SecurityGroups:
             - !Ref ApiSecurityGroup
           Subnets:
-            - !Ref SubnetA
-            - !Ref SubnetB
+            - !Ref PrivateSubnetA
+            - !Ref PrivateSubnetB
       PlatformVersion: 1.3.0
       Scale:
         Unit: PERCENT
         Value: 1
-      Service: !Ref ECSService
+      Service: !Ref Service
       TaskDefinition: !Ref BlueTaskDefinition
       LoadBalancers:
         - ContainerName: SimpleGoApi
@@ -201,5 +207,5 @@ Resources:
     Type: AWS::ECS::PrimaryTaskSet
     Properties:
       Cluster: !Ref ECSCluster
-      Service: !Ref ECSService
+      Service: !Ref Service
       TaskSetId: !GetAtt BlueTaskSet.Id

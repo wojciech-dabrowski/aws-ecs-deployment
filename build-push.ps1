@@ -6,7 +6,7 @@ param(
     [string]$awsAccountId,
 
     [Parameter(Mandatory = $False)]
-    [string]$repositoryName = "ecs-blue-green-repository"
+    [string]$repositoryName = "ecr-repository"
 )
 
 (Get-ECRLoginCommand).Password | docker login --username AWS --password-stdin "${awsAccountId}.dkr.ecr.eu-west-1.amazonaws.com"

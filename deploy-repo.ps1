@@ -1,6 +1,6 @@
 param(
     [Parameter(Mandatory = $False)]
-    [string]$stackName = "ecs-blue-green-repository"
+    [string]$stackName = "ecr-repository"
 )
 
 aws cloudformation deploy --template-file .\repository.yaml --stack-name $stackName

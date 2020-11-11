@@ -23,7 +23,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="470cf353-5471-4110-81dc-6c73e5ea39ff" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/blue-green/deploy-app.ps1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rolling/application.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rolling/deploy-app.ps1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/blue-green/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-push.ps1" beforeDir="false" afterPath="$PROJECT_DIR$/build-push.ps1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy-app.ps1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy-repo.ps1" beforeDir="false" afterPath="$PROJECT_DIR$/deploy-repo.ps1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repository.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/repository.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +66,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -65,6 +75,16 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Projects\Private\aws-ecs-deployment" />
+      <recent name="E:\Projects\Private\aws-ecs-deployment\blue-green" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Projects\Private\aws-ecs-deployment" />
+      <recent name="E:\Projects\Private\aws-ecs-deployment\rolling" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
@@ -107,10 +127,10 @@
       <screen x="64" y="0" width="2496" height="1440" />
     </state>
     <state x="1059" y="575" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/64.0.2496.1440/-1858.516.1858.1080@64.0.2496.1440" timestamp="1604589105371" />
-    <state x="1092" y="475" key="FileChooserDialogImpl" timestamp="1604998405740">
+    <state x="1092" y="475" key="FileChooserDialogImpl" timestamp="1605003666568">
       <screen x="64" y="0" width="2496" height="1440" />
     </state>
-    <state x="1092" y="475" key="FileChooserDialogImpl/64.0.2496.1440/-1858.516.1858.1080@64.0.2496.1440" timestamp="1604998405740" />
+    <state x="1092" y="475" key="FileChooserDialogImpl/64.0.2496.1440/-1858.516.1858.1080@64.0.2496.1440" timestamp="1605003666568" />
     <state x="813" y="365" key="SettingsEditor" timestamp="1604659525918">
       <screen x="64" y="0" width="2496" height="1440" />
     </state>

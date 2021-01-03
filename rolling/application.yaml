@@ -131,10 +131,13 @@ Resources:
       Cluster: !Ref ECSCluster
       TaskDefinition: !Ref BlueTaskDefinition
       DeploymentConfiguration:
+        DeploymentCircuitBreaker:
+          Enable: true
+          Rollback: true
         MinimumHealthyPercent: 100
         MaximumPercent: 200
       DesiredCount: 2
-      HealthCheckGracePeriodSeconds: 30
+      HealthCheckGracePeriodSeconds: 15
       LaunchType: FARGATE
       NetworkConfiguration:
         AwsvpcConfiguration:
